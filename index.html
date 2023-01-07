@@ -9,10 +9,28 @@
   <body>
     <!-- header row with logo -->
     <div class="header">
-        <img id="tentacles" src="assets/tentacles.png">
+        
+        <img id="tentacles" src="assets/tentacles.png">  
         <h1 class="header-text">Sea Monster Crowdfunding</h1>
+ 
     </div>
-
+    <!-- Search bar for searching a game -->
+    <div id="search-game">
+            <input type="text" name="search" id="input" placeholder="Search for Games..">
+            <button type="button" id="search-btn" data-model-target="#model">Search</button>
+            <a href="#games-container" ><button type="button" id="search-btn">Show all games</button></a>
+            <div class="model" id="model">
+                <div class="model-header">
+                  <div class="title">Games</div>
+                  <button data-close-button class="close-button">&times;</button>
+                </div>
+            <div class="model-body" id="model-body">
+                
+            </div>
+              </div>
+              <div id="overlay"></div>
+    </div>
+    
     <!-- background info about company -->
     <h2>Welcome to Sea Monster!</h2>
     <div id="description-container">
