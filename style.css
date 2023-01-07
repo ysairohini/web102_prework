@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Cabin';
-    background-color: #758190;
+    background-color: rgb(104, 181, 184);
 }
 
 #tentacles {
@@ -11,20 +11,37 @@ body {
 
 .header {
     display: flex;
-    background-color: lightblue;
+    background-color: white;
     padding: 1%;
     align-items: center;
     margin-left: -10px;
     margin-right: -10px;
-    margin-top: -10px;
+    margin-top: -10px;    
+}
+.header-text{
+    background-color: #a9dbde;
+    height: 45px;
+    width: 400px;
+    border-radius: 30px;
+    padding-left: 1%;
+    box-shadow: 0 0 15px rebeccapurple;
 }
 
 .stats-container {
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 250px;
+    align-items: center;
+    background-color: rgb(55, 57, 84);
+}
+.stats-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0 30px lightblue;
 }
 
 .stats-card {
-    background-color: #a8b0bc;
+    background-color: #f7f8fa;
     border-radius: 7px;
     padding: 1%;
     margin: 1%;
@@ -40,6 +57,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    color: black;
 }
 
 .game-img {
@@ -49,17 +67,18 @@ body {
 }
 
 .game-card {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 1%;
     margin: 1%;
     width: 300px;
+    height: 400px;
     text-align: center;
     border-radius: 7px;
 }
 
 .game-card:hover {
     cursor: pointer;
-    box-shadow: 0 0 30px lightblue;
+    box-shadow: 0 0 30px rebeccapurple;
 }
 
 #button-container {
@@ -67,9 +86,126 @@ body {
 }
 
 button {
+    cursor: pointer;
     font-family: 'Cabin';
     border: none;
     padding: 1%;
     margin: 1%;
     border-radius: 7px;
 }
+
+  
+  #input {
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 50%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    margin-left: 380px;
+  }
+  
+  *, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  .model {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+    overflow: auto;
+    max-height: 500px;
+  }
+  
+  .model.active {
+    transform: translate(-50%, -50%) scale(1);
+    overflow: auto;
+  }
+  
+  .model-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    overflow: auto;
+  }
+  
+  .modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .model-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .model-body {
+    padding: 10px 15px;
+    overflow: auto;
+    background-color: rgb(194, 207, 232);
+  }
+  
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    overflow: auto;
+  }
+  
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+    overflow: auto;
+  }
+  .flip-card {
+    background-color: transparent;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-back {
+
+    background-color: white;
+    transform: rotateY(180deg);
+  }
